@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel — Premalatha P Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',sans-serif;background:#f8f8f8;color:#1a1a1a;min-height:100vh}
+    ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#f0f0f0}::-webkit-scrollbar-thumb{background:#E91E63;border-radius:3px}
+    .header{background:#fff;border-bottom:1px solid #e5e5e5;padding:1rem 2rem;position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between}
+    .header h1{font-size:1.1rem;font-weight:600;display:flex;align-items:center;gap:0.5rem}
+    .header h1 span{color:#E91E63}
+    .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 1.2rem;border-radius:8px;font-size:0.8rem;font-weight:500;cursor:pointer;border:none;transition:all .2s}
+    .btn-primary{background:#E91E63;color:#fff}.btn-primary:hover{background:#C2185B}
+    .btn-secondary{background:#fff;color:#1a1a1a;border:1px solid #d4d4d4}.btn-secondary:hover{border-color:#E91E63;color:#E91E63}
+    .btn-success{background:#16a34a;color:#fff}.btn-success:hover{background:#15803d}
+    .container{max-width:900px;margin:0 auto;padding:2rem}
+    .section{background:#fff;border-radius:16px;border:1px solid #e5e5e5;margin-bottom:1.5rem;overflow:hidden}
+    .section-header{padding:1.25rem 1.5rem;border-bottom:1px solid #f0f0f0;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none}
+    .section-header:hover{background:#fafafa}
+    .section-header h2{font-size:0.95rem;font-weight:600;display:flex;align-items:center;gap:0.5rem}
+    .section-header .icon{color:#E91E63}
+    .section-header .arrow{transition:transform .3s;color:#999}
+    .section-header.open .arrow{transform:rotate(180deg)}
+    .section-body{padding:1.5rem;display:none}
+    .section-body.open{display:block}
+    .field{margin-bottom:1.25rem}
+    .field label{display:block;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:#737373;margin-bottom:0.4rem;font-weight:500}
+    .field input,.field textarea,.field select{width:100%;padding:0.7rem 1rem;border:1px solid #e5e5e5;border-radius:10px;font-size:0.85rem;font-family:inherit;transition:border-color .2s;background:#fff;color:#1a1a1a}
+    .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:#E91E63;box-shadow:0 0 0 3px rgba(233,30,99,0.08)}
+    .field textarea{resize:vertical;min-height:80px}
+    .field-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .sub-label{font-size:0.75rem;font-weight:600;color:#404040;margin:1.5rem 0 0.75rem;padding-bottom:0.5rem;border-bottom:1px solid #f5f5f5;display:flex;align-items:center;justify-content:space-between}
+    .add-btn{background:none;border:1px dashed #d4d4d4;color:#999;padding:0.5rem 1rem;border-radius:8px;cursor:pointer;font-size:0.75rem;transition:all .2s;width:100%;margin-top:0.5rem}
+    .add-btn:hover{border-color:#E91E63;color:#E91E63}
+    .remove-btn{background:none;border:none;color:#ef4444;cursor:pointer;font-size:0.7rem;padding:0.3rem 0.6rem;border-radius:6px;transition:background .2s}
+    .remove-btn:hover{background:#fef2f2}
+    .item-card{background:#fafafa;border:1px solid #f0f0f0;border-radius:12px;padding:1rem;margin-bottom:0.75rem;position:relative}
+    .toast{position:fixed;bottom:2rem;right:2rem;background:#1a1a1a;color:#fff;padding:1rem 1.5rem;border-radius:12px;z-index:9999;transform:translateY(100px);opacity:0;transition:all .4s cubic-bezier(0.16,1,0.3,1);font-size:0.85rem}
+    .toast.show{transform:translateY(0);opacity:1}
+    .badge{display:inline-flex;align-items:center;gap:0.3rem;background:#fef2f2;color:#E91E63;font-size:0.65rem;padding:0.2rem 0.6rem;border-radius:20px;font-weight:500}
+    @media(max-width:640px){.field-row{grid-template-columns:1fr}.container{padding:1rem}.header{padding:1rem;flex-wrap:wrap;gap:0.5rem}.header .actions{width:100%;display:flex;gap:0.5rem}}
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1><span class="iconify" data-icon="lucide:layout-dashboard" data-width="18"></span> Portfolio <span>Admin</span></h1>
+    <div class="actions">
+      <button class="btn btn-secondary" onclick="importJSON()">
+        <span class="iconify" data-icon="lucide:upload" data-width="14"></span> Import JSON
+      </button>
+      <button class="btn btn-primary" onclick="exportJSON()">
+        <span class="iconify" data-icon="lucide:download" data-width="14"></span> Save & Download
+      </button>
+    </div>
+    <input type="file" id="fileInput" accept=".json" style="display:none" onchange="handleFileImport(event)">
+  </div>
+
+  <div class="container">
+    <p style="color:#737373;font-size:0.8rem;margin-bottom:1.5rem;line-height:1.6">
+      Edit your portfolio content below. Click <strong>Save & Download</strong> to get the updated <code style="background:#f0f0f0;padding:0.15rem 0.4rem;border-radius:4px;font-size:0.75rem">data.json</code> file. Replace the old one and push to GitHub.
+    </p>
+
+    <!-- HERO -->
+    <div class="section">
+      <div class="section-header open" onclick="toggleSection(this)">
+        <h2><span class="iconify icon" data-icon="lucide:sparkles" data-width="16"></span> Hero Section</h2>
+        <span class="iconify arrow" data-icon="lucide:chevron-down" data-width="18"></span>
+      </div>
+      <div class="section-body open" data-path="hero">
+        <div class="field-row">
+          <div class="field"><label>Greeting</label><input data-field="greeting"></div>
+          <div class="field"><label>Title</label><input data-field="title"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>First Name</label><input data-field="name"></div>
+          <div class="field"><label>Last Name</label><input data-field="lastName"></div>
+        </div>
+        <div class="field"><label>Subtitle</label><textarea data-field="subtitle"></textarea></div>
+        <div class="field-row">
+          <div class="field"><label>CTA Primary</label><input data-field="ctaPrimary"></div>
+          <div class="field"><label>CTA Secondary</label><input data-field="ctaSecondary"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <h2><span class="iconify icon" data-icon="lucide:user" data-width="16"></span> About Me</h2>
+        <span class="iconify arrow" data-icon="lucide:chevron-down" data-width="18"></span>
+      </div>
+      <div class="section-body" data-path="about">
+        <div class="field-row">
+          <div class="field"><label>Section Label</label><input data-field="label"></div>
+          <div class="field"><label>Heading</label><input data-field="heading"></div>
+        </div>
+        <div class="field"><label>Description (use blank line between paragraphs)</label><textarea data-field="description" rows="5"></textarea></div>
+        <div class="sub-label">Stats <button class="add-btn" style="width:auto;margin:0;padding:0.2rem 0.8rem" onclick="addStat()">+ Add Stat</button></div>
+        <div id="stats-container"></div>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <h2><span class="iconify icon" data-icon="lucide:briefcase" data-width="16"></span> Services</h2>
+        <span class="iconify arrow" data-icon="lucide:chevron-down" data-width="18"></span>
+      </div>
+      <div class="section-body" data-path="services">
+        <div class="field-row">
+          <div class="field"><label>Section Label</label><input data-field="label"></div>
+          <div class="field"><label>Heading</label><input data-field="heading"></div>
+        </div>
+        <div class="sub-label">Service Items <button class="add-btn" style="width:auto;margin:0;padding:0.2rem 0.8rem" onclick="addService()">+ Add Service</button></div>
+        <div id="services-container"></div>
+      </div>
+    </div>
+
+    <!-- CASE STUDIES -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <h2><span class="iconify icon" data-icon="lucide:trophy" data-width="16"></span> Case Studies</h2>
+        <span class="iconify arrow" data-icon="lucide:chevron-down" data-width="18"></span>
+      </div>
+      <div class="section-body" data-path="caseStudies">
+        <div class="field-row">
+          <div class="field"><label>Section Label</label><input data-field="label"></div>
+          <div class="field"><label>Heading</label><input data-field="heading"></div>
+        </div>
+        <div class="sub-label">Featured Case Study</div>
+        <div id="featured-container"></div>
+        <div class="sub-label">Other Case Studies <button class="add-btn" style="width:auto;margin:0;padding:0.2rem 0.8rem" onclick="addCaseStudy()">+ Add Case Study</button></div>
+        <div id="cases-container"></div>
+      </div>
+    </div>
+
+    <!-- KNOWLEDGE PANEL -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <h2><span class="iconify icon" data-icon="lucide:info" data-width="16"></span> Knowledge Panel</h2>
+        <span class="iconify arrow" data-icon="lucide:chevron-down" data-width="18"></span>
+      </div>
+      <div class="section-body" data-path="knowledge">
+        <div class="field-row">
+          <div class="field"><label>Section Label</label><input data-field="label"></div>
+          <div class="field"><label>Heading</label><input data-field="heading"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Full Name</label><input data-field="name"></div>
+          <div class="field"><label>Title</label><input data-field="title"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Photo URL</label><input data-field="photo"></div>
+          <div class="field"><label>Description</label><input data-field="description"></div>
+        </div>
+        <div class="sub-label">Facts <button class="add-btn" style="width:auto;margin:0;padding:0.2rem 0.8rem" onclick="addFact()">+ Add Fact</button></div>
+        <div id="facts-container"></div>
+        <div class="field"><label>Specializations (comma-separated)</label><input data-field="specializations" data-type="csv"></div>
+        <div class="field"><label>Tools (comma-separated)</label><input data-field="tools" data-type="csv"></div>
+        <div class="field"><label>Certifications (comma-separated)</label><input data-field="certifications" data-type="csv"></div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <h2><span class="iconify icon" data-icon="lucide:mail" data-width="16"></span> Contact</h2>
+        <span class="iconify arrow" data-icon="lucide:chevron-down" data-width="18"></span>
+      </div>
+      <div class="section-body" data-path="contact">
+        <div class="field-row">
+          <div class="field"><label>Section Label</label><input data-field="label"></div>
+          <div class="field"><label>Heading</label><input data-field="heading"></div>
+        </div>
+        <div class="field"><label>Description</label><textarea data-field="description"></textarea></div>
+        <div class="field-row">
+          <div class="field"><label>Email</label><input data-field="email"></div>
+          <div class="field"><label>LinkedIn URL</label><input data-field="linkedin"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Location</label><input data-field="location"></div>
+          <div class="field"><label>Availability</label><input data-field="availability"></div>
+        </div>
+        <div class="field"><label>Form Subjects (comma-separated)</label><input data-field="formSubjects" data-type="csv"></div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <h2><span class="iconify icon" data-icon="lucide:footprints" data-width="16"></span> Footer</h2>
+        <span class="iconify arrow" data-icon="lucide:chevron-down" data-width="18"></span>
+      </div>
+      <div class="section-body" data-path="footer">
+        <div class="field"><label>Copyright Text</label><input data-field="copyright"></div>
+        <div class="field"><label>Tagline</label><input data-field="tagline"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script>
+    let DATA = {};
+
+    // Load default data
+    const DEFAULT = {"hero":{"greeting":"Hello, I'm","name":"Premalatha","lastName":"P.","title":"SEO Manager","subtitle":"I help businesses dominate search rankings, drive organic growth, and turn clicks into customers through data-driven SEO strategies.","ctaPrimary":"View Case Studies","ctaSecondary":"Get in Touch"},"about":{"label":"About Me","heading":"Driving Growth Through Strategic SEO","description":"With over 5 years of hands-on experience in search engine optimization, I specialize in crafting comprehensive SEO strategies that deliver measurable results. From technical audits to content strategies, I've helped businesses across e-commerce, SaaS, healthcare, and local markets achieve sustainable organic growth.\n\nMy approach combines deep technical knowledge with creative content thinking — because great SEO isn't just about algorithms, it's about understanding people and building experiences that search engines love to rank.","stats":[{"value":"5+","label":"Years Experience"},{"value":"50+","label":"Projects Delivered"},{"value":"200%","label":"Avg. Traffic Growth"},{"value":"98%","label":"Client Retention"}]},"services":{"label":"What I Do","heading":"Services","items":[{"icon":"lucide:code-2","title":"Technical SEO","description":"Comprehensive site audits, crawlability fixes, Core Web Vitals optimization, schema markup, and site architecture improvements."},{"icon":"lucide:file-text","title":"Content Strategy","description":"Keyword research, content gap analysis, topic clustering, and editorial calendar planning that aligns with search intent."},{"icon":"lucide:link","title":"Link Building","description":"White-hat link acquisition through digital PR, guest posting, broken link building, and strategic outreach campaigns."},{"icon":"lucide:search","title":"SEO Audits","description":"In-depth technical and on-page audits with actionable prioritized recommendations and implementation roadmaps."},{"icon":"lucide:map-pin","title":"Local SEO","description":"Google Business Profile optimization, local citation building, review management, and local pack domination strategies."},{"icon":"lucide:bar-chart-3","title":"Analytics & Reporting","description":"Custom dashboards, ROI tracking, conversion analysis, and monthly performance reports with clear actionable insights."}]},"caseStudies":{"label":"Case Studies","heading":"Proven Results","featured":{"image":"https://picsum.photos/seed/ecommerce-fashion/800/600.jpg","title":"E-Commerce Fashion Brand Overhaul","category":"E-Commerce · Technical SEO","metrics":[{"value":"+150%","label":"Organic Traffic"},{"value":"+89%","label":"Revenue"},{"value":"12x","label":"ROI"}],"description":"A struggling fashion e-commerce store was losing ground to competitors. I conducted a complete technical SEO overhaul, fixed 200+ crawl errors, optimized product pages for long-tail keywords, and implemented a content hub strategy.","results":["Fixed 200+ technical SEO issues including crawl budget waste","Ranked #1 for 45+ high-intent keywords within 6 months","Increased page speed score from 38 to 92 on mobile","Built 80+ high-quality backlinks through digital PR"]},"items":[{"image":"https://picsum.photos/seed/saas-dashboard/600/400.jpg","title":"B2B SaaS Lead Generation","category":"SaaS · Content SEO","metric":{"value":"+200%","label":"Organic Leads"},"description":"Developed a topic cluster content strategy that transformed this SaaS company's blog into a lead generation machine."},{"image":"https://picsum.photos/seed/healthcare-clinic/600/400.jpg","title":"Healthcare Local Domination","category":"Healthcare · Local SEO","metric":{"value":"30+","label":"#1 Keywords"},"description":"Took a multi-location healthcare startup from invisible to dominating the local pack across all locations."},{"image":"https://picsum.photos/seed/agency-growth/600/400.jpg","title":"Agency White-Label SEO","category":"Agency · Strategy","metric":{"value":"20+","label":"Client Accounts"},"description":"Built and managed white-label SEO operations for a digital marketing agency, handling 20+ client accounts simultaneously."}]},"knowledge":{"label":"Knowledge Panel","heading":"At a Glance","photo":"https://picsum.photos/seed/professional-woman-portrait/300/300.jpg","name":"Premalatha P","title":"SEO Manager","description":"Experienced SEO Manager specializing in technical SEO, content strategy, and data-driven organic growth for businesses across multiple industries.","facts":[{"label":"Experience","value":"5+ Years in SEO"},{"label":"Specialization","value":"Technical & Content SEO"},{"label":"Industries","value":"E-commerce, SaaS, Healthcare"},{"label":"Based in","value":"India"}],"specializations":["Technical SEO","Content Strategy","Link Building","Local SEO","E-commerce SEO","SaaS SEO"],"tools":["Google Analytics","Ahrefs","SEMrush","Screaming Frog","Google Search Console","Surfer SEO"],"certifications":["Google Analytics Certified","HubSpot SEO Certified","SEMrush SEO Toolkit Certified"]},"contact":{"label":"Let's Connect","heading":"Get in Touch","description":"Have a project in mind or want to discuss how SEO can grow your business? I'd love to hear from you.","email":"premalatha.seo@gmail.com","linkedin":"https://www.linkedin.com/in/premalatha-p-b4000411b/","location":"India","availability":"Open to opportunities","formSubjects":["SEO Audit Request","Content Strategy","Technical SEO","Local SEO","General Inquiry"]},"footer":{"copyright":"© 2025 Premalatha P. All rights reserved.","tagline":"Growing businesses through strategic SEO"}};
+
+    // Try to fetch data.json
+    async function init() {
+      try {
+        const res = await fetch('data.json');
+        if (res.ok) DATA = await res.json();
+        else DATA = JSON.parse(JSON.stringify(DEFAULT));
+      } catch(e) { DATA = JSON.parse(JSON.stringify(DEFAULT)); }
+      populateForms();
+    }
+
+    function populateForms() {
+      // Simple fields
+      document.querySelectorAll('[data-field]').forEach(el => {
+        const path = el.closest('[data-path]').dataset.path;
+        const field = el.dataset.field;
+        const type = el.dataset.type;
+        let val = getDataValue(DATA, path, field);
+        if (type === 'csv' && Array.isArray(val)) val = val.join(', ');
+        el.value = val || '';
+      });
+      // Dynamic arrays
+      renderStats();
+      renderServices();
+      renderFeatured();
+      renderCaseStudies();
+      renderFacts();
+    }
+
+    function getDataValue(obj, path, field) {
+      const keys = path.split('.');
+      let cur = obj;
+      for (const k of keys) { if (cur[k] === undefined) return ''; cur = cur[k]; }
+      return cur[field] !== undefined ? cur[field] : '';
+    }
+
+    function setDataValue(obj, path, field, value) {
+      const keys = path.split('.');
+      let cur = obj;
+      for (let i = 0; i < keys.length - 1; i++) { if (!cur[keys[i]]) cur[keys[i]] = {}; cur = cur[keys[i]]; }
+      cur[keys[keys.length-1]][field] = value;
+    }
+
+    // Collect all form data into DATA object
+    function collectData() {
+      document.querySelectorAll('[data-field]').forEach(el => {
+        const path = el.closest('[data-path]').dataset.path;
+        const field = el.dataset.field;
+        const type = el.dataset.type;
+        let val = el.value;
+        if (type === 'csv') val = val.split(',').map(s => s.trim()).filter(Boolean);
+        setDataValue(DATA, path, field, val);
+      });
+      // Collect dynamic arrays
+      collectStats();
+      collectServices();
+      collectFeatured();
+      collectCaseStudies();
+      collectFacts();
+    }
+
+    // === STATS ===
+    function renderStats() {
+      const c = document.getElementById('stats-container');
+      c.innerHTML = (DATA.about.stats||[]).map((s,i) => `
+        <div class="item-card">
+          <button class="remove-btn" onclick="this.closest('.item-card').remove()">Remove</button>
+          <div class="field-row">
+            <div class="field"><label>Value</label><input value="${s.value}" class="stat-value"></div>
+            <div class="field"><label>Label</label><input value="${s.label}" class="stat-label"></div>
+          </div>
+        </div>
+      `).join('');
+    }
+    function collectStats() {
+      const cards = document.querySelectorAll('#stats-container .item-card');
+      DATA.about.stats = Array.from(cards).map(c => ({
+        value: c.querySelector('.stat-value').value,
+        label: c.querySelector('.stat-label').value
+      }));
+    }
+    function addStat() {
+      document.getElementById('stats-container').insertAdjacentHTML('beforeend',
+        '<div class="item-card"><button class="remove-btn" onclick="this.closest(\'.item-card\').remove()">Remove</button><div class="field-row"><div class="field"><label>Value</label><input class="stat-value" placeholder="e.g. 5+"></div><div class="field"><label>Label</label><input class="stat-label" placeholder="e.g. Years"></div></div></div>'
+      );
+    }
+
+    // === SERVICES ===
+    function renderServices() {
+      const c = document.getElementById('services-container');
+      c.innerHTML = (DATA.services.items||[]).map((s,i) => `
+        <div class="item-card">
+          <button class="remove-btn" onclick="this.closest('.item-card').remove()">Remove</button>
+          <div class="field-row">
+            <div class="field"><label>Icon (Iconify name)</label><input value="${s.icon}" class="svc-icon"></div>
+            <div class="field"><label>Title</label><input value="${s.title}" class="svc-title"></div>
+          </div>
+          <div class="field"><label>Description</label><textarea class="svc-desc">${s.description}</textarea></div>
+        </div>
+      `).join('');
+    }
+    function collectServices() {
+      const cards = document.querySelectorAll('#services-container .item-card');
+      DATA.services.items = Array.from(cards).map(c => ({
+        icon: c.querySelector('.svc-icon').value,
+        title: c.querySelector('.svc-title').value,
+        description: c.querySelector('.svc-desc').value
+      }));
+    }
+    function addService() {
+      document.getElementById('services-container').insertAdjacentHTML('beforeend',
+        '<div class="item-card"><button class="remove-btn" onclick="this.closest(\'.item-card\').remove()">Remove</button><div class="field-row"><div class="field"><label>Icon</label><input class="svc-icon" placeholder="lucide:star"></div><div class="field"><label>Title</label><input class="svc-title" placeholder="Service name"></div></div><div class="field"><label>Description</label><textarea class="svc-desc" placeholder="Describe this service..."></textarea></div></div>'
+      );
+    }
+
+    // === FEATURED CASE STUDY ===
+    function renderFeatured() {
+      const f = DATA.caseStudies.featured;
+      const c = document.getElementById('featured-container');
+      c.innerHTML = `
+        <div class="item-card">
+          <div class="field"><label>Image URL</label><input value="${f.image}" class="feat-image"></div>
+          <div class="field-row">
+            <div class="field"><label>Title</label><input value="${f.title}" class="feat-title"></div>
+            <div class="field"><label>Category</label><input value="${f.category}" class="feat-cat"></div>
+          </div>
+          <div class="field"><label>Description</label><textarea class="feat-desc">${f.description}</textarea></div>
+          <div class="sub-label">Metrics <button class="add-btn" style="width:auto;margin:0;padding:0.2rem 0.8rem" onclick="addFeatMetric()">+ Add Metric</button></div>
+          <div id="feat-metrics-container">${(f.metrics||[]).map((m,i) => `
+            <div class="field-row" style="margin-bottom:0.5rem">
+              <div class="field"><label>Value</label><input value="${m.value}" class="fm-value"></div>
+              <div class="field"><label>Label</label><input value="${m.label}" class="fm-label"></div>
+              <button class="remove-btn" style="align-self:end;margin-bottom:4px" onclick="this.parentElement.remove()">×</button>
+            </div>
+          `).join('')}</div>
+          <div class="sub-label">Results <button class="add-btn" style="width:auto;margin:0;padding:0.2rem 0.8rem" onclick="addFeatResult()">+ Add Result</button></div>
+          <div id="feat-results-container">${(f.results||[]).map((r,i) => `
+            <div style="display:flex;gap:0.5rem;margin-bottom:0.5rem;align-items:end">
+              <div class="field" style="flex:1;margin:0"><label>Result ${i+1}</label><input value="${r}" class="fr-text"></div>
+              <button class="remove-btn" onclick="this.parentElement.remove()">×</button>
+            </div>
+          `).join('')}</div>
+        </div>
+      `;
+    }
+    function collectFeatured() {
+      const f = DATA.caseStudies.featured;
+      f.image = document.querySelector('.feat-image').value;
+      f.title = document.querySelector('.feat-title').value;
+      f.category = document.querySelector('.feat-cat').value;
+      f.description = document.querySelector('.feat-desc').value;
+      f.metrics = Array.from(document.querySelectorAll('#feat-metrics-container > .field-row')).map(r => ({
+        value: r.querySelector('.fm-value').value,
+        label: r.querySelector('.fm-label').value
+      }));
+      f.results = Array.from(document.querySelectorAll('#feat-results-container > div')).map(r => r.querySelector('.fr-text').value);
+    }
+    function addFeatMetric() {
+      document.getElementById('feat-metrics-container').insertAdjacentHTML('beforeend',
+        '<div class="field-row" style="margin-bottom:0.5rem"><div class="field"><label>Value</label><input class="fm-value" placeholder="+100%"></div><div class="field"><label>Label</label><input class="fm-label" placeholder="Metric"></div><button class="remove-btn" style="align-self:end;margin-bottom:4px" onclick="this.parentElement.remove()">×</button></div>'
+      );
+    }
+    function addFeatResult() {
+      const idx = document.querySelectorAll('#feat-results-container > div').length + 1;
+      document.getElementById('feat-results-container').insertAdjacentHTML('beforeend',
+        `<div style="display:flex;gap:0.5rem;margin-bottom:0.5rem;align-items:end"><div class="field" style="flex:1;margin:0"><label>Result ${idx}</label><input class="fr-text" placeholder="Achievement..."></div><button class="remove-btn" onclick="this.parentElement.remove()">×</button></div>`
+      );
+    }
+
+    // === CASE STUDIES ===
+    function renderCaseStudies() {
+      const c = document.getElementById('cases-container');
+      c.innerHTML = (DATA.caseStudies.items||[]).map((s,i) => `
+        <div class="item-card">
+          <button class="remove-btn" onclick="this.closest('.item-card').remove()">Remove</button>
+          <div class="field"><label>Image URL</label><input value="${s.image}" class="cs-image"></div>
+          <div class="field-row">
+            <div class="field"><label>Title</label><input value="${s.title}" class="cs-title"></div>
+            <div class="field"><label>Category</label><input value="${s.category}" class="cs-cat"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Metric Value</label><input value="${s.metric.value}" class="cs-mval"></div>
+            <div class="field"><label>Metric Label</label><input value="${s.metric.label}" class="cs-mlab"></div>
+          </div>
+          <div class="field"><label>Description</label><textarea class="cs-desc">${s.description}</textarea></div>
+        </div>
+      `).join('');
+    }
+    function collectCaseStudies() {
+      const cards = document.querySelectorAll('#cases-container .item-card');
+      DATA.caseStudies.items = Array.from(cards).map(c => ({
+        image: c.querySelector('.cs-image').value,
+        title: c.querySelector('.cs-title').value,
+        category: c.querySelector('.cs-cat').value,
+        metric: {
+          value: c.querySelector('.cs-mval').value,
+          label: c.querySelector('.cs-mlab').value
+        },
+        description: c.querySelector('.cs-desc').value
+      }));
+    }
+    function addCaseStudy() {
+      document.getElementById('cases-container').insertAdjacentHTML('beforeend',
+        '<div class="item-card"><button class="remove-btn" onclick="this.closest(\'.item-card\').remove()">Remove</button><div class="field"><label>Image URL</label><input class="cs-image" placeholder="https://..."></div><div class="field-row"><div class="field"><label>Title</label><input class="cs-title" placeholder="Case study title"></div><div class="field"><label>Category</label><input class="cs-cat" placeholder="Industry · Type"></div></div><div class="field-row"><div class="field"><label>Metric Value</label><input class="cs-mval" placeholder="+100%"></div><div class="field"><label>Metric Label</label><input class="cs-mlab" placeholder="Metric name"></div></div><div class="field"><label>Description</label><textarea class="cs-desc" placeholder="Brief description..."></textarea></div></div>'
+      );
+    }
+
+    // === FACTS ===
+    function renderFacts() {
+      const c = document.getElementById('facts-container');
+      c.innerHTML = (DATA.knowledge.facts||[]).map((f,i) => `
+        <div class="item-card" style="padding:0.75rem 1rem">
+          <button class="remove-btn" onclick="this.closest('.item-card').remove()">Remove</button>
+          <div class="field-row" style="margin:0">
+            <div class="field" style="margin:0"><label>Label</label><input value="${f.label}" class="fact-label"></div>
+            <div class="field" style="margin:0"><label>Value</label><input value="${f.value}" class="fact-value"></div>
+          </div>
+        </div>
+      `).join('');
+    }
+    function collectFacts() {
+      const cards = document.querySelectorAll('#facts-container .item-card');
+      DATA.knowledge.facts = Array.from(cards).map(c => ({
+        label: c.querySelector('.fact-label').value,
+        value: c.querySelector('.fact-value').value
+      }));
+    }
+    function addFact() {
+      document.getElementById('facts-container').insertAdjacentHTML('beforeend',
+        '<div class="item-card" style="padding:0.75rem 1rem"><button class="remove-btn" onclick="this.closest(\'.item-card\').remove()">Remove</button><div class="field-row" style="margin:0"><div class="field" style="margin:0"><label>Label</label><input class="fact-label" placeholder="e.g. Experience"></div><div class="field" style="margin:0"><label>Value</label><input class="fact-value" placeholder="e.g. 5 Years"></div></div></div>'
+      );
+    }
+
+    // === SECTION TOGGLE ===
+    function toggleSection(header) {
+      header.classList.toggle('open');
+      header.nextElementSibling.classList.toggle('open');
+    }
+
+    // === IMPORT / EXPORT ===
+    function importJSON() { document.getElementById('fileInput').click(); }
+    function handleFileImport(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        try {
+          DATA = JSON.parse(ev.target.result);
+          populateForms();
+          showToast('Data imported successfully!');
+        } catch(err) { showToast('Invalid JSON file'); }
+      };
+      reader.readAsText(file);
+      e.target.value = '';
+    }
+
+    function exportJSON() {
+      collectData();
+      const blob = new Blob([JSON.stringify(DATA, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'data.json'; a.click();
+      URL.revokeObjectURL(url);
+      showToast('data.json downloaded! Replace the old file and push to GitHub.');
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 4000);
+    }
+
+    init();
+  </script>
+</body>
+</html>

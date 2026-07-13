@@ -1,0 +1,133 @@
+{
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Premalatha",
+    "lastName": "P.",
+    "title": "SEO Manager",
+    "subtitle": "I help businesses dominate search rankings, drive organic growth, and turn clicks into customers through data-driven SEO strategies.",
+    "ctaPrimary": "View Case Studies",
+    "ctaSecondary": "Get in Touch"
+  },
+  "about": {
+    "label": "About Me",
+    "heading": "Driving Growth Through Strategic SEO",
+    "description": "With over 5 years of hands-on experience in search engine optimization, I specialize in crafting comprehensive SEO strategies that deliver measurable results. From technical audits to content strategies, I've helped businesses across e-commerce, SaaS, healthcare, and local markets achieve sustainable organic growth.\n\nMy approach combines deep technical knowledge with creative content thinking — because great SEO isn't just about algorithms, it's about understanding people and building experiences that search engines love to rank.",
+    "stats": [
+      { "value": "5+", "label": "Years Experience" },
+      { "value": "50+", "label": "Projects Delivered" },
+      { "value": "200%", "label": "Avg. Traffic Growth" },
+      { "value": "98%", "label": "Client Retention" }
+    ]
+  },
+  "services": {
+    "label": "What I Do",
+    "heading": "Services",
+    "items": [
+      {
+        "icon": "lucide:code-2",
+        "title": "Technical SEO",
+        "description": "Comprehensive site audits, crawlability fixes, Core Web Vitals optimization, schema markup, and site architecture improvements."
+      },
+      {
+        "icon": "lucide:file-text",
+        "title": "Content Strategy",
+        "description": "Keyword research, content gap analysis, topic clustering, and editorial calendar planning that aligns with search intent."
+      },
+      {
+        "icon": "lucide:link",
+        "title": "Link Building",
+        "description": "White-hat link acquisition through digital PR, guest posting, broken link building, and strategic outreach campaigns."
+      },
+      {
+        "icon": "lucide:search",
+        "title": "SEO Audits",
+        "description": "In-depth technical and on-page audits with actionable prioritized recommendations and implementation roadmaps."
+      },
+      {
+        "icon": "lucide:map-pin",
+        "title": "Local SEO",
+        "description": "Google Business Profile optimization, local citation building, review management, and local pack domination strategies."
+      },
+      {
+        "icon": "lucide:bar-chart-3",
+        "title": "Analytics & Reporting",
+        "description": "Custom dashboards, ROI tracking, conversion analysis, and monthly performance reports with clear actionable insights."
+      }
+    ]
+  },
+  "caseStudies": {
+    "label": "Case Studies",
+    "heading": "Proven Results",
+    "featured": {
+      "image": "https://picsum.photos/seed/ecommerce-fashion/800/600.jpg",
+      "title": "E-Commerce Fashion Brand Overhaul",
+      "category": "E-Commerce · Technical SEO",
+      "metrics": [
+        { "value": "+150%", "label": "Organic Traffic" },
+        { "value": "+89%", "label": "Revenue" },
+        { "value": "12x", "label": "ROI" }
+      ],
+      "description": "A struggling fashion e-commerce store was losing ground to competitors. I conducted a complete technical SEO overhaul, fixed 200+ crawl errors, optimized product pages for long-tail keywords, and implemented a content hub strategy.",
+      "results": [
+        "Fixed 200+ technical SEO issues including crawl budget waste",
+        "Ranked #1 for 45+ high-intent keywords within 6 months",
+        "Increased page speed score from 38 to 92 on mobile",
+        "Built 80+ high-quality backlinks through digital PR"
+      ]
+    },
+    "items": [
+      {
+        "image": "https://picsum.photos/seed/saas-dashboard/600/400.jpg",
+        "title": "B2B SaaS Lead Generation",
+        "category": "SaaS · Content SEO",
+        "metric": { "value": "+200%", "label": "Organic Leads" },
+        "description": "Developed a topic cluster content strategy that transformed this SaaS company's blog into a lead generation machine."
+      },
+      {
+        "image": "https://picsum.photos/seed/healthcare-clinic/600/400.jpg",
+        "title": "Healthcare Local Domination",
+        "category": "Healthcare · Local SEO",
+        "metric": { "value": "30+", "label": "#1 Keywords" },
+        "description": "Took a multi-location healthcare startup from invisible to dominating the local pack across all locations."
+      },
+      {
+        "image": "https://picsum.photos/seed/agency-growth/600/400.jpg",
+        "title": "Agency White-Label SEO",
+        "category": "Agency · Strategy",
+        "metric": { "value": "20+", "label": "Client Accounts" },
+        "description": "Built and managed white-label SEO operations for a digital marketing agency, handling 20+ client accounts simultaneously."
+      }
+    ]
+  },
+  "knowledge": {
+    "label": "Knowledge Panel",
+    "heading": "At a Glance",
+    "photo": "https://picsum.photos/seed/professional-woman-portrait/300/300.jpg",
+    "name": "Premalatha P",
+    "title": "SEO Manager",
+    "description": "Experienced SEO Manager specializing in technical SEO, content strategy, and data-driven organic growth for businesses across multiple industries.",
+    "facts": [
+      { "label": "Experience", "value": "5+ Years in SEO" },
+      { "label": "Specialization", "value": "Technical & Content SEO" },
+      { "label": "Industries", "value": "E-commerce, SaaS, Healthcare" },
+      { "label": "Based in", "value": "India" }
+    ],
+    "specializations": ["Technical SEO", "Content Strategy", "Link Building", "Local SEO", "E-commerce SEO", "SaaS SEO"],
+    "tools": ["Google Analytics", "Ahrefs", "SEMrush", "Screaming Frog", "Google Search Console", "Surfer SEO"],
+    "certifications": ["Google Analytics Certified", "HubSpot SEO Certified", "SEMrush SEO Toolkit Certified"]
+  },
+  "contact": {
+    "label": "Let's Connect",
+    "heading": "Get in Touch",
+    "description": "Have a project in mind or want to discuss how SEO can grow your business? I'd love to hear from you.",
+    "email": "premalatha.seo@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/premalatha-p-b4000411b/",
+    "location": "India",
+    "availability": "Open to opportunities",
+    "formSubjects": ["SEO Audit Request", "Content Strategy", "Technical SEO", "Local SEO", "General Inquiry"]
+  },
+  "footer": {
+    "copyright": "© 2025 Premalatha P. All rights reserved.",
+    "tagline": "Growing businesses through strategic SEO"
+  }
+}

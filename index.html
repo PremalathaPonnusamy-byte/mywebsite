@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premalatha P | SEO Manager</title>
+  <meta name="description" content="SEO Manager with 5+ years of experience driving organic growth through technical SEO, content strategy, and data-driven approaches.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pk: { 300:'#FF80AB',400:'#FF4081',500:'#E91E63',600:'#C2185B',700:'#AD1457',800:'#880E4F' },
+            dk: { 50:'#222',100:'#1C1C1C',200:'#181818',300:'#141414',400:'#111',500:'#0D0D0D',600:'#0A0A0A',700:'#070707',800:'#040404',900:'#000' }
+          },
+          fontFamily: { serif:['Playfair Display','serif'], sans:['Inter','sans-serif'] },
+          animation: { 'float':'float 8s ease-in-out infinite', 'pulse-slow':'pulse 4s cubic-bezier(0.4,0,0.6,1) infinite' }
+        }
+      }
+    }
+  </script>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',sans-serif;background:#0A0A0A;color:#fff;overflow-x:hidden}
+    ::-webkit-scrollbar{width:6px}
+    ::-webkit-scrollbar-track{background:#0A0A0A}
+    ::-webkit-scrollbar-thumb{background:#E91E63;border-radius:3px}
+    .gradient-text{background:linear-gradient(135deg,#FF4081,#E91E63,#FF80AB,#E91E63);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradient-shift 6s ease infinite}
+    @keyframes gradient-shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+    @keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-30px) scale(1.05)}66%{transform:translate(-20px,20px) scale(0.95)}}
+    @keyframes reveal-up{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes reveal-left{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:translateX(0)}}
+    @keyframes reveal-right{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+    @keyframes reveal-scale{from{opacity:0;transform:scale(0.9)}to{opacity:1;transform:scale(1)}}
+    @keyframes line-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    @keyframes count-up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    .reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
+    .reveal-left{opacity:0;transform:translateX(-40px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
+    .reveal-right{opacity:0;transform:translateX(40px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
+    .reveal-scale{opacity:0;transform:scale(0.9);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
+    .revealed{opacity:1!important;transform:translate(0) scale(1)!important}
+    .delay-1{transition-delay:.1s!important}.delay-2{transition-delay:.2s!important}.delay-3{transition-delay:.3s!important}.delay-4{transition-delay:.4s!important}.delay-5{transition-delay:.5s!important}.delay-6{transition-delay:.6s!important}
+    .line-reveal{transform:scaleX(0);transform-origin:left;transition:transform 1s cubic-bezier(0.16,1,0.3,1)}
+    .revealed .line-reveal{transform:scaleX(1)}
+    .card-glow{position:relative;overflow:hidden}
+    .card-glow::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(233,30,99,0.08),transparent 60%);opacity:0;transition:opacity .5s}
+    .card-glow:hover::before{opacity:1}
+    .knowledge-card{background:#fff;color:#1a1a1a;box-shadow:0 1px 6px rgba(0,0,0,0.1),0 10px 40px rgba(0,0,0,0.08)}
+    .dot-pattern{background-image:radial-gradient(rgba(233,30,99,0.08) 1px,transparent 1px);background-size:24px 24px}
+    .nav-blur{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+    .pink-glow{box-shadow:0 0 60px rgba(233,30,99,0.15),0 0 120px rgba(233,30,99,0.05)}
+    .metric-card{border:1px solid rgba(233,30,99,0.15);background:rgba(233,30,99,0.03)}
+    .metric-card:hover{border-color:rgba(233,30,99,0.4);background:rgba(233,30,99,0.06)}
+    .case-img{transition:transform .7s cubic-bezier(0.16,1,0.3,1)}
+    .case-card:hover .case-img{transform:scale(1.05)}
+    .tag{background:rgba(233,30,99,0.1);color:#FF4081;border:1px solid rgba(233,30,99,0.2)}
+    .toast{position:fixed;bottom:2rem;right:2rem;background:#1a1a1a;border:1px solid rgba(233,30,99,0.3);color:#fff;padding:1rem 1.5rem;border-radius:12px;z-index:9999;transform:translateY(100px);opacity:0;transition:all .4s cubic-bezier(0.16,1,0.3,1)}
+    .toast.show{transform:translateY(0);opacity:1}
+    @media(max-width:768px){.hero-name{font-size:3.5rem!important;line-height:1!important}}
+  </style>
+</head>
+<body class="dot-pattern">
+
+  <!-- LOADER -->
+  <div id="loader" class="fixed inset-0 z-[100] bg-dk-600 flex items-center justify-center transition-opacity duration-700">
+    <div class="text-center">
+      <div class="w-10 h-10 border-2 border-pk-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+      <p class="text-sm text-pk-400 tracking-widest uppercase font-light">Loading</p>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="#hero" class="font-serif text-xl text-white hover:text-pk-400 transition-colors">
+          P<span class="text-pk-500">.</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#about" class="text-sm text-gray-400 hover:text-white transition-colors duration-200">About</a>
+          <a href="#services" class="text-sm text-gray-400 hover:text-white transition-colors duration-200">Services</a>
+          <a href="#cases" class="text-sm text-gray-400 hover:text-white transition-colors duration-200">Case Studies</a>
+          <a href="#knowledge" class="text-sm text-gray-400 hover:text-white transition-colors duration-200">Knowledge</a>
+          <a href="#contact" class="ml-2 px-5 py-2 bg-pk-500 hover:bg-pk-600 text-white text-sm font-medium rounded-full transition-colors duration-200">Contact</a>
+        </div>
+        <button id="menuBtn" class="md:hidden text-white p-2">
+          <span class="iconify" data-icon="lucide:menu" data-width="24"></span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden fixed inset-0 top-16 bg-dk-600/98 nav-blur -translate-x-full transition-transform duration-500 z-40">
+      <div class="flex flex-col items-center justify-center h-full gap-8">
+        <a href="#about" class="text-2xl text-gray-300 hover:text-pk-400 transition-colors mobile-link">About</a>
+        <a href="#services" class="text-2xl text-gray-300 hover:text-pk-400 transition-colors mobile-link">Services</a>
+        <a href="#cases" class="text-2xl text-gray-300 hover:text-pk-400 transition-colors mobile-link">Case Studies</a>
+        <a href="#knowledge" class="text-2xl text-gray-300 hover:text-pk-400 transition-colors mobile-link">Knowledge</a>
+        <a href="#contact" class="mt-4 px-8 py-3 bg-pk-500 text-white rounded-full text-lg mobile-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+    <div class="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-pk-500/10 blur-[120px] animate-float pointer-events-none"></div>
+    <div class="absolute bottom-1/4 left-1/4 w-[300px] h-[300px] rounded-full bg-pk-700/10 blur-[100px] animate-float pointer-events-none" style="animation-delay:-4s"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-pk-500/5 pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-pk-500/5 pointer-events-none"></div>
+
+    <div class="relative z-10 text-center max-w-5xl mx-auto">
+      <p id="hero-greeting" class="text-pk-400 text-sm md:text-base tracking-[0.3em] uppercase font-light mb-6" style="animation:reveal-up .8s .5s both"></p>
+      <h1 class="hero-name font-serif text-6xl md:text-8xl lg:text-9xl font-medium leading-[0.9] mb-2" style="animation:reveal-up .8s .7s both">
+        <span id="hero-name" class="gradient-text"></span>
+      </h1>
+      <h1 class="hero-name font-serif text-6xl md:text-8xl lg:text-9xl font-medium leading-[0.9] mb-8" style="animation:reveal-up .8s .9s both">
+        <span id="hero-lastName" class="text-white/90"></span>
+      </h1>
+      <div class="flex items-center justify-center gap-3 mb-8" style="animation:reveal-up .8s 1.1s both">
+        <div class="w-8 h-px bg-pk-500"></div>
+        <p id="hero-title" class="text-pk-400 text-sm md:text-base tracking-[0.2em] uppercase font-light"></p>
+        <div class="w-8 h-px bg-pk-500"></div>
+      </div>
+      <p id="hero-subtitle" class="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-12 font-light" style="animation:reveal-up .8s 1.3s both"></p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4" style="animation:reveal-up .8s 1.5s both">
+        <a href="#cases" id="hero-cta1" class="group px-8 py-3.5 bg-pk-500 hover:bg-pk-600 text-white text-sm font-medium rounded-full transition-all duration-300 flex items-center gap-2">
+          <span></span>
+          <span class="iconify group-hover:translate-x-1 transition-transform" data-icon="lucide:arrow-down-right" data-width="16"></span>
+        </a>
+        <a href="#contact" id="hero-cta2" class="px-8 py-3.5 border border-white/20 hover:border-pk-500/50 text-white text-sm font-medium rounded-full transition-all duration-300 hover:bg-white/5"></a>
+      </div>
+    </div>
+
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2" style="animation:reveal-up .8s 2s both">
+      <span class="text-gray-600 text-xs tracking-widest uppercase">Scroll</span>
+      <div class="w-px h-10 bg-gradient-to-b from-pk-500/50 to-transparent animate-pulse-slow"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-24 md:py-32 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-center gap-4 mb-16 reveal">
+        <span id="about-label" class="text-pk-400 text-xs tracking-[0.3em] uppercase font-medium"></span>
+        <div class="flex-1 h-px bg-white/5"></div>
+      </div>
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
+        <div>
+          <h2 id="about-heading" class="font-serif text-3xl md:text-5xl text-white mb-8 reveal delay-1"></h2>
+          <div id="about-description" class="text-gray-400 leading-relaxed space-y-4 reveal delay-2"></div>
+        </div>
+        <div class="grid grid-cols-2 gap-4" id="about-stats"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-24 md:py-32 px-6 relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-pk-500/[0.02] to-transparent pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto relative">
+      <div class="flex items-center gap-4 mb-6 reveal">
+        <span id="services-label" class="text-pk-400 text-xs tracking-[0.3em] uppercase font-medium"></span>
+        <div class="flex-1 h-px bg-white/5"></div>
+      </div>
+      <h2 id="services-heading" class="font-serif text-3xl md:text-5xl text-white mb-16 reveal delay-1"></h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="services-grid"></div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section id="cases" class="py-24 md:py-32 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-center gap-4 mb-6 reveal">
+        <span id="cases-label" class="text-pk-400 text-xs tracking-[0.3em] uppercase font-medium"></span>
+        <div class="flex-1 h-px bg-white/5"></div>
+      </div>
+      <h2 id="cases-heading" class="font-serif text-3xl md:text-5xl text-white mb-16 reveal delay-1"></h2>
+      <!-- Featured -->
+      <div id="cases-featured" class="mb-10"></div>
+      <!-- Grid -->
+      <div class="grid md:grid-cols-3 gap-6" id="cases-grid"></div>
+    </div>
+  </section>
+
+  <!-- KNOWLEDGE PANEL -->
+  <section id="knowledge" class="py-24 md:py-32 px-6 relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-pk-500/[0.02] to-transparent pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto relative">
+      <div class="flex items-center gap-4 mb-6 reveal">
+        <span id="knowledge-label" class="text-pk-400 text-xs tracking-[0.3em] uppercase font-medium"></span>
+        <div class="flex-1 h-px bg-white/5"></div>
+      </div>
+      <h2 id="knowledge-heading" class="font-serif text-3xl md:text-5xl text-white mb-16 reveal delay-1"></h2>
+      <div class="max-w-2xl mx-auto reveal-scale delay-2" id="knowledge-panel"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-24 md:py-32 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-center gap-4 mb-6 reveal">
+        <span id="contact-label" class="text-pk-400 text-xs tracking-[0.3em] uppercase font-medium"></span>
+        <div class="flex-1 h-px bg-white/5"></div>
+      </div>
+      <h2 id="contact-heading" class="font-serif text-3xl md:text-5xl text-white mb-6 reveal delay-1"></h2>
+      <p id="contact-description" class="text-gray-400 max-w-xl mb-16 reveal delay-2"></p>
+      <div class="grid lg:grid-cols-5 gap-12 lg:gap-16">
+        <form id="contactForm" class="lg:col-span-3 space-y-6 reveal-left delay-3">
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs text-gray-500 uppercase tracking-widest mb-2">Name</label>
+              <input type="text" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-pk-500/50 focus:bg-white/[0.07] transition-all placeholder:text-gray-600" placeholder="Your name">
+            </div>
+            <div>
+              <label class="block text-xs text-gray-500 uppercase tracking-widest mb-2">Email</label>
+              <input type="email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-pk-500/50 focus:bg-white/[0.07] transition-all placeholder:text-gray-600" placeholder="you@email.com">
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs text-gray-500 uppercase tracking-widest mb-2">Subject</label>
+            <select id="subjectSelect" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-pk-500/50 transition-all appearance-none cursor-pointer">
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs text-gray-500 uppercase tracking-widest mb-2">Message</label>
+            <textarea rows="5" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-pk-500/50 focus:bg-white/[0.07] transition-all placeholder:text-gray-600 resize-none" placeholder="Tell me about your project..."></textarea>
+          </div>
+          <button type="submit" class="group px-8 py-3.5 bg-pk-500 hover:bg-pk-600 text-white text-sm font-medium rounded-full transition-all duration-300 flex items-center gap-2">
+            Send Message
+            <span class="iconify group-hover:translate-x-1 transition-transform" data-icon="lucide:send" data-width="16"></span>
+          </button>
+        </form>
+        <div class="lg:col-span-2 space-y-8 reveal-right delay-4">
+          <div>
+            <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">Email</p>
+            <a id="contact-email" href="#" class="text-white hover:text-pk-400 transition-colors text-sm"></a>
+          </div>
+          <div>
+            <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">LinkedIn</p>
+            <a id="contact-linkedin" href="#" target="_blank" class="text-white hover:text-pk-400 transition-colors text-sm inline-flex items-center gap-2">
+              <span class="iconify" data-icon="lucide:linkedin" data-width="16"></span>
+              <span>Connect with me</span>
+            </a>
+          </div>
+          <div>
+            <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">Location</p>
+            <p id="contact-location" class="text-white text-sm inline-flex items-center gap-2">
+              <span class="iconify text-pk-500" data-icon="lucide:map-pin" data-width="16"></span>
+              <span></span>
+            </p>
+          </div>
+          <div>
+            <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">Availability</p>
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+              <span id="contact-availability" class="text-green-400 text-sm"></span>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/5">
+            <p class="text-xs text-gray-500 uppercase tracking-widest mb-4">Quick Connect</p>
+            <div class="flex gap-3">
+              <a href="#" class="w-10 h-10 rounded-full border border-white/10 hover:border-pk-500/50 hover:bg-pk-500/10 flex items-center justify-center transition-all">
+                <span class="iconify text-gray-400" data-icon="lucide:linkedin" data-width="18"></span>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full border border-white/10 hover:border-pk-500/50 hover:bg-pk-500/10 flex items-center justify-center transition-all">
+                <span class="iconify text-gray-400" data-icon="lucide:twitter" data-width="18"></span>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full border border-white/10 hover:border-pk-500/50 hover:bg-pk-500/10 flex items-center justify-center transition-all">
+                <span class="iconify text-gray-400" data-icon="lucide:github" data-width="18"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 py-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <p id="footer-copyright" class="text-gray-600 text-sm"></p>
+      <p id="footer-tagline" class="text-gray-700 text-xs tracking-widest uppercase"></p>
+    </div>
+  </footer>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast"><span id="toast-msg"></span></div>
+
+  <script>
+    // ========== DEFAULT DATA ==========
+    const DEFAULT_DATA = {
+      hero: {
+        greeting: "Hello, I'm",
+        name: "Premalatha",
+        lastName: "P.",
+        title: "SEO Manager",
+        subtitle: "I help businesses dominate search rankings, drive organic growth, and turn clicks into customers through data-driven SEO strategies.",
+        ctaPrimary: "View Case Studies",
+        ctaSecondary: "Get in Touch"
+      },
+      about: {
+        label: "About Me",
+        heading: "Driving Growth Through Strategic SEO",
+        description: "With over 5 years of hands-on experience in search engine optimization, I specialize in crafting comprehensive SEO strategies that deliver measurable results. From technical audits to content strategies, I've helped businesses across e-commerce, SaaS, healthcare, and local markets achieve sustainable organic growth.\n\nMy approach combines deep technical knowledge with creative content thinking — because great SEO isn't just about algorithms, it's about understanding people and building experiences that search engines love to rank.",
+        stats: [
+          { value: "5+", label: "Years Experience" },
+          { value: "50+", label: "Projects Delivered" },
+          { value: "200%", label: "Avg. Traffic Growth" },
+          { value: "98%", label: "Client Retention" }
+        ]
+      },
+      services: {
+        label: "What I Do",
+        heading: "Services",
+        items: [
+          { icon: "lucide:code-2", title: "Technical SEO", description: "Comprehensive site audits, crawlability fixes, Core Web Vitals optimization, schema markup, and site architecture improvements." },
+          { icon: "lucide:file-text", title: "Content Strategy", description: "Keyword research, content gap analysis, topic clustering, and editorial calendar planning that aligns with search intent." },
+          { icon: "lucide:link", title: "Link Building", description: "White-hat link acquisition through digital PR, guest posting, broken link building, and strategic outreach campaigns." },
+          { icon: "lucide:search", title: "SEO Audits", description: "In-depth technical and on-page audits with actionable prioritized recommendations and implementation roadmaps." },
+          { icon: "lucide:map-pin", title: "Local SEO", description: "Google Business Profile optimization, local citation building, review management, and local pack domination strategies." },
+          { icon: "lucide:bar-chart-3", title: "Analytics & Reporting", description: "Custom dashboards, ROI tracking, conversion analysis, and monthly performance reports with clear actionable insights." }
+        ]
+      },
+      caseStudies: {
+        label: "Case Studies",
+        heading: "Proven Results",
+        featured: {
+          image: "https://picsum.photos/seed/ecommerce-fashion/800/600.jpg",
+          title: "E-Commerce Fashion Brand Overhaul",
+          category: "E-Commerce · Technical SEO",
+          metrics: [
+            { value: "+150%", label: "Organic Traffic" },
+            { value: "+89%", label: "Revenue" },
+            { value: "12x", label: "ROI" }
+          ],
+          description: "A struggling fashion e-commerce store was losing ground to competitors. I conducted a complete technical SEO overhaul, fixed 200+ crawl errors, optimized product pages for long-tail keywords, and implemented a content hub strategy.",
+          results: [
+            "Fixed 200+ technical SEO issues including crawl budget waste",
+            "Ranked #1 for 45+ high-intent keywords within 6 months",
+            "Increased page speed score from 38 to 92 on mobile",
+            "Built 80+ high-quality backlinks through digital PR"
+          ]
+        },
+        items: [
+          { image: "https://picsum.photos/seed/saas-dashboard/600/400.jpg", title: "B2B SaaS Lead Generation", category: "SaaS · Content SEO", metric: { value: "+200%", label: "Organic Leads" }, description: "Developed a topic cluster content strategy that transformed this SaaS company's blog into a lead generation machine." },
+          { image: "https://picsum.photos/seed/healthcare-clinic/600/400.jpg", title: "Healthcare Local Domination", category: "Healthcare · Local SEO", metric: { value: "30+", label: "#1 Keywords" }, description: "Took a multi-location healthcare startup from invisible to dominating the local pack across all locations." },
+          { image: "https://picsum.photos/seed/agency-growth/600/400.jpg", title: "Agency White-Label SEO", category: "Agency · Strategy", metric: { value: "20+", label: "Client Accounts" }, description: "Built and managed white-label SEO operations for a digital marketing agency, handling 20+ client accounts simultaneously." }
+        ]
+      },
+      knowledge: {
+        label: "Knowledge Panel",
+        heading: "At a Glance",
+        photo: "https://picsum.photos/seed/professional-woman-portrait/300/300.jpg",
+        name: "Premalatha P",
+        title: "SEO Manager",
+        description: "Experienced SEO Manager specializing in technical SEO, content strategy, and data-driven organic growth for businesses across multiple industries.",
+        facts: [
+          { label: "Experience", value: "5+ Years in SEO" },
+          { label: "Specialization", value: "Technical & Content SEO" },
+          { label: "Industries", value: "E-commerce, SaaS, Healthcare" },
+          { label: "Based in", value: "India" }
+        ],
+        specializations: ["Technical SEO", "Content Strategy", "Link Building", "Local SEO", "E-commerce SEO", "SaaS SEO"],
+        tools: ["Google Analytics", "Ahrefs", "SEMrush", "Screaming Frog", "Google Search Console", "Surfer SEO"],
+        certifications: ["Google Analytics Certified", "HubSpot SEO Certified", "SEMrush SEO Toolkit Certified"]
+      },
+      contact: {
+        label: "Let's Connect",
+        heading: "Get in Touch",
+        description: "Have a project in mind or want to discuss how SEO can grow your business? I'd love to hear from you.",
+        email: "premalatha.seo@gmail.com",
+        linkedin: "https://www.linkedin.com/in/premalatha-p-b4000411b/",
+        location: "India",
+        availability: "Open to opportunities",
+        formSubjects: ["SEO Audit Request", "Content Strategy", "Technical SEO", "Local SEO", "General Inquiry"]
+      },
+      footer: {
+        copyright: "© 2025 Premalatha P. All rights reserved.",
+        tagline: "Growing businesses through strategic SEO"
+      }
+    };
+
+    let DATA = DEFAULT_DATA;
+
+    // ========== LOAD DATA ==========
+    async function loadData() {
+      try {
+        const res = await fetch('data.json');
+        if (res.ok) DATA = await res.json();
+      } catch(e) { /* use defaults */ }
+      render();
+    }
+
+    // ========== RENDER ==========
+    function render() {
+      // Hero
+      document.getElementById('hero-greeting').textContent = DATA.hero.greeting;
+      document.getElementById('hero-name').textContent = DATA.hero.name;
+      document.getElementById('hero-lastName').textContent = DATA.hero.lastName;
+      document.getElementById('hero-title').textContent = DATA.hero.title;
+      document.getElementById('hero-subtitle').textContent = DATA.hero.subtitle;
+      document.getElementById('hero-cta1').querySelector('span').textContent = DATA.hero.ctaPrimary;
+      document.getElementById('hero-cta2').textContent = DATA.hero.ctaSecondary;
+
+      // About
+      document.getElementById('about-label').textContent = DATA.about.label;
+      document.getElementById('about-heading').textContent = DATA.about.heading;
+      const descParts = DATA.about.description.split('\n\n');
+      document.getElementById('about-description').innerHTML = descParts.map(p => `<p>${p}</p>`).join('');
+      document.getElementById('about-stats').innerHTML = DATA.about.stats.map((s, i) => `
+        <div class="metric-card rounded-2xl p-6 text-center transition-all duration-300 reveal delay-${i+1}">
+          <p class="font-serif text-3xl md:text-4xl gradient-text mb-2">${s.value}</p>
+          <p class="text-gray-500 text-xs tracking-widest uppercase">${s.label}</p>
+        </div>
+      `).join('');
+
+      // Services
+      document.getElementById('services-label').textContent = DATA.services.label;
+      document.getElementById('services-heading').textContent = DATA.services.heading;
+      document.getElementById('services-grid').innerHTML = DATA.services.items.map((s, i) => `
+        <div class="card-glow group bg-white/[0.02] border border-white/[0.06] rounded-2xl p-8 hover:border-pk-500/20 transition-all duration-500 reveal delay-${(i%3)+1}">
+          <div class="w-12 h-12 rounded-xl bg-pk-500/10 flex items-center justify-center mb-5 group-hover:bg-pk-500/20 transition-colors">
+            <span class="iconify text-pk-400" data-icon="${s.icon}" data-width="22"></span>
+          </div>
+          <h3 class="text-white text-lg font-medium mb-3">${s.title}</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">${s.description}</p>
+        </div>
+      `).join('');
+
+      // Case Studies
+      document.getElementById('cases-label').textContent = DATA.caseStudies.label;
+      document.getElementById('cases-heading').textContent = DATA.caseStudies.heading;
+      const f = DATA.caseStudies.featured;
+      document.getElementById('cases-featured').innerHTML = `
+        <div class="case-card group bg-white/[0.02] border border-white/[0.06] rounded-2xl overflow-hidden hover:border-pk-500/20 transition-all duration-500 reveal">
+          <div class="grid lg:grid-cols-2">
+            <div class="aspect-[4/3] lg:aspect-auto overflow-hidden">
+              <img src="${f.image}" alt="${f.title}" class="case-img w-full h-full object-cover">
+            </div>
+            <div class="p-8 md:p-10 flex flex-col justify-center">
+              <span class="text-pk-400 text-xs tracking-widest uppercase mb-4">${f.category}</span>
+              <h3 class="font-serif text-2xl md:text-3xl text-white mb-4">${f.title}</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-6">${f.description}</p>
+              <div class="flex flex-wrap gap-3 mb-6">
+                ${f.metrics.map(m => `<div class="metric-card rounded-xl px-4 py-2 text-center"><p class="text-pk-400 font-serif text-xl">${m.value}</p><p class="text-gray-600 text-[10px] uppercase tracking-wider">${m.label}</p></div>`).join('')}
+              </div>
+              <ul class="space-y-2">
+                ${f.results.map(r => `<li class="flex items-start gap-2 text-sm text-gray-500"><span class="iconify text-pk-500 mt-0.5 flex-shrink-0" data-icon="lucide:check" data-width="14"></span>${r}</li>`).join('')}
+              </ul>
+            </div>
+          </div>
+        </div>
+      `;
+      document.getElementById('cases-grid').innerHTML = DATA.caseStudies.items.map((c, i) => `
+        <div class="case-card group bg-white/[0.02] border border-white/[0.06] rounded-2xl overflow-hidden hover:border-pk-500/20 transition-all duration-500 reveal delay-${i+1}">
+          <div class="aspect-[3/2] overflow-hidden">
+            <img src="${c.image}" alt="${c.title}" class="case-img w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <span class="text-pk-400 text-[10px] tracking-widest uppercase">${c.category}</span>
+            <h3 class="font-serif text-lg text-white mt-2 mb-2">${c.title}</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">${c.description}</p>
+            <div class="metric-card rounded-xl px-4 py-2 inline-flex items-center gap-2">
+              <span class="text-pk-400 font-serif text-xl">${c.metric.value}</span>
+              <span class="text-gray-600 text-[10px] uppercase tracking-wider">${c.metric.label}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      // Knowledge Panel
+      document.getElementById('knowledge-label').textContent = DATA.knowledge.label;
+      document.getElementById('knowledge-heading').textContent = DATA.knowledge.heading;
+      const k = DATA.knowledge;
+      document.getElementById('knowledge-panel').innerHTML = `
+        <div class="knowledge-card rounded-xl overflow-hidden">
+          <div class="bg-gradient-to-r from-gray-50 to-white p-8 text-center border-b border-gray-100">
+            <img src="${k.photo}" alt="${k.name}" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 ring-4 ring-white shadow-lg">
+            <h3 class="text-xl font-medium text-gray-900">${k.name}</h3>
+            <p class="text-sm text-gray-500">${k.title}</p>
+          </div>
+          <div class="p-6 space-y-5">
+            <p class="text-sm text-gray-600 leading-relaxed">${k.description}</p>
+            <div class="space-y-3">
+              ${k.facts.map(f => `<div class="flex justify-between py-1.5 border-b border-gray-100"><span class="text-xs text-gray-400 uppercase tracking-wider">${f.label}</span><span class="text-sm text-gray-800 font-medium">${f.value}</span></div>`).join('')}
+            </div>
+            <div>
+              <p class="text-xs text-gray-400 uppercase tracking-wider mb-2">Specializes in</p>
+              <div class="flex flex-wrap gap-1.5">
+                ${k.specializations.map(s => `<span class="px-2.5 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">${s}</span>`).join('')}
+              </div>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400 uppercase tracking-wider mb-2">Tools</p>
+              <div class="flex flex-wrap gap-1.5">
+                ${k.tools.map(t => `<span class="px-2.5 py-1 bg-blue-50 text-blue-700 text-xs rounded-full">${t}</span>`).join('')}
+              </div>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400 uppercase tracking-wider mb-2">Certifications</p>
+              <div class="flex flex-wrap gap-1.5">
+                ${k.certifications.map(c => `<span class="px-2.5 py-1 bg-green-50 text-green-700 text-xs rounded-full">${c}</span>`).join('')}
+              </div>
+            </div>
+            <div class="pt-3 border-t border-gray-100 flex items-center gap-1.5 text-xs text-gray-400">
+              <span class="iconify" data-icon="lucide:info" data-width="12"></span>
+              Information from portfolio. Last updated 2025.
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Contact
+      document.getElementById('contact-label').textContent = DATA.contact.label;
+      document.getElementById('contact-heading').textContent = DATA.contact.heading;
+      document.getElementById('contact-description').textContent = DATA.contact.description;
+      const emailEl = document.getElementById('contact-email');
+      emailEl.textContent = DATA.contact.email;
+      emailEl.href = `mailto:${DATA.contact.email}`;
+      document.getElementById('contact-linkedin').href = DATA.contact.linkedin;
+      document.getElementById('contact-location').querySelector('span:last-child').textContent = DATA.contact.location;
+      document.getElementById('contact-availability').textContent = DATA.contact.availability;
+      const sel = document.getElementById('subjectSelect');
+      sel.innerHTML = DATA.contact.formSubjects.map(s => `<option value="${s}">${s}</option>`).join('');
+
+      // Footer
+      document.getElementById('footer-copyright').textContent = DATA.footer.copyright;
+      document.getElementById('footer-tagline').textContent = DATA.footer.tagline;
+
+      // Re-observe new elements
+      initObservers();
+    }
+
+    // ========== SCROLL ANIMATIONS ==========
+    function initObservers() {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); } });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(el => obs.observe(el));
+    }
+
+    // ========== NAVBAR ==========
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      const scroll = window.scrollY;
+      if (scroll > 50) {
+        nav.classList.add('bg-dk-600/90', 'nav-blur', 'border-b', 'border-white/5');
+      } else {
+        nav.classList.remove('bg-dk-600/90', 'nav-blur', 'border-b', 'border-white/5');
+      }
+      lastScroll = scroll;
+    });
+
+    // ========== MOBILE MENU ==========
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let menuOpen = false;
+    menuBtn.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.style.transform = menuOpen ? 'translateX(0)' : 'translateX(-100%)';
+      menuBtn.innerHTML = menuOpen
+        ? '<span class="iconify" data-icon="lucide:x" data-width="24"></span>'
+        : '<span class="iconify" data-icon="lucide:menu" data-width="24"></span>';
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        menuOpen = false;
+        mobileMenu.style.transform = 'translateX(-100%)';
+        menuBtn.innerHTML = '<span class="iconify" data-icon="lucide:menu" data-width="24"></span>';
+      });
+    });
+
+    // ========== CONTACT FORM ==========
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('Message sent! I\'ll get back to you soon.');
+      e.target.reset();
+    });
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      document.getElementById('toast-msg').textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3500);
+    }
+
+    // ========== INIT ==========
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      loader.style.opacity = '0';
+      setTimeout(() => loader.style.display = 'none', 700);
+      loadData();
+    });
+  </script>
+</body>
+</html>
