@@ -2,7 +2,7 @@
   "hero": {
     "greeting": "Hello, I'm",
     "name": "Premalatha",
-    "lastName": "P.",
+    "lastName": "P",
     "title": "SEO Manager",
     "subtitle": "I help businesses dominate search rankings, drive organic growth, and turn clicks into customers through data-driven SEO strategies.",
     "ctaPrimary": "View Case Studies",
@@ -11,12 +11,24 @@
   "about": {
     "label": "About Me",
     "heading": "Driving Growth Through Strategic SEO",
-    "description": "With over 5 years of hands-on experience in search engine optimization, I specialize in crafting comprehensive SEO strategies that deliver measurable results. From technical audits to content strategies, I've helped businesses across e-commerce, SaaS, healthcare, and local markets achieve sustainable organic growth.\n\nMy approach combines deep technical knowledge with creative content thinking — because great SEO isn't just about algorithms, it's about understanding people and building experiences that search engines love to rank.",
+    "description": "With over 10 years of hands-on experience in search engine optimization, I specialize in crafting comprehensive SEO strategies that deliver measurable results. From technical audits to content strategies, I've helped businesses across the property sector and local markets achieve sustainable organic growth.\n\nMy approach combines deep technical knowledge with creative content thinking — because great SEO isn't just about algorithms; it's about understanding people and building experiences that search engines love to rank.",
     "stats": [
-      { "value": "5+", "label": "Years Experience" },
-      { "value": "50+", "label": "Projects Delivered" },
-      { "value": "200%", "label": "Avg. Traffic Growth" },
-      { "value": "98%", "label": "Client Retention" }
+      {
+        "value": "9+",
+        "label": "Years Experience"
+      },
+      {
+        "value": "25+",
+        "label": "Projects Delivered"
+      },
+      {
+        "value": "72%",
+        "label": "Avg. Traffic Growth"
+      },
+      {
+        "value": "98%",
+        "label": "Client Retention"
+      }
     ]
   },
   "services": {
@@ -60,42 +72,79 @@
     "heading": "Proven Results",
     "featured": {
       "image": "https://picsum.photos/seed/ecommerce-fashion/800/600.jpg",
-      "title": "E-Commerce Fashion Brand Overhaul",
-      "category": "E-Commerce · Technical SEO",
+      "title": "Multi Regional and Multi Lingual Estate Agency Website",
+      "category": "Organic SEO: On-page and Off-page SEO",
       "metrics": [
-        { "value": "+150%", "label": "Organic Traffic" },
-        { "value": "+89%", "label": "Revenue" },
-        { "value": "12x", "label": "ROI" }
+        {
+          "value": "72%",
+          "label": "Organic Traffic"
+        },
+        {
+          "value": "+65%",
+          "label": "Conversions"
+        },
+        {
+          "value": "5x",
+          "label": "ROI"
+        }
       ],
-      "description": "A struggling fashion e-commerce store was losing ground to competitors. I conducted a complete technical SEO overhaul, fixed 200+ crawl errors, optimized product pages for long-tail keywords, and implemented a content hub strategy.",
+      "description": "Case Study: Technical SEO & Content Optimisation\n\nResults: 📈 72% increase in organic traffic | 🎯 65% increase in leads\n\nA dynamic website held back by technical SEO issues, underperforming content and a weak lead generation strategy was transformed through a full technical audit, fixing crawlability, indexation and duplicate content issues, optimising the site architecture for better search engine visibility, refreshing on-page content and metadata aligned to high-intent queries, and improving calls to action across key conversion pages — resulting in a 72% uplift in organic traffic and a 65% increase in leads.",
       "results": [
-        "Fixed 200+ technical SEO issues including crawl budget waste",
+        "Fixed 2000+ technical SEO issues including crawl budget waste",
         "Ranked #1 for 45+ high-intent keywords within 6 months",
-        "Increased page speed score from 38 to 92 on mobile",
-        "Built 80+ high-quality backlinks through digital PR"
+        "Improved DA from 49 to 51"
       ]
     },
     "items": [
       {
         "image": "https://picsum.photos/seed/saas-dashboard/600/400.jpg",
-        "title": "B2B SaaS Lead Generation",
-        "category": "SaaS · Content SEO",
-        "metric": { "value": "+200%", "label": "Organic Leads" },
-        "description": "Developed a topic cluster content strategy that transformed this SaaS company's blog into a lead generation machine."
+        "title": "B2C Lead Generation",
+        "category": "Estate Agency. CRO",
+        "metric": {
+          "value": "+72%",
+          "label": "Conversion Rate"
+        },
+        "description": "Developed a brand-specific conversion rate strategy that directly contributed to improving the overall conversion rate and driving more measurable results for the business."
       },
       {
         "image": "https://picsum.photos/seed/healthcare-clinic/600/400.jpg",
-        "title": "Healthcare Local Domination",
-        "category": "Healthcare · Local SEO",
-        "metric": { "value": "30+", "label": "#1 Keywords" },
-        "description": "Took a multi-location healthcare startup from invisible to dominating the local pack across all locations."
+        "title": "Multibrand Estate Agency",
+        "category": "Estate Agency · Local SEO",
+        "metric": {
+          "value": "30+",
+          "label": "#1 Keywords"
+        },
+        "description": "Took a multi-location estate agency from zero local search visibility to dominating the Google Local Pack across all branch locations, significantly increasing local reach and lead generation."
       },
       {
         "image": "https://picsum.photos/seed/agency-growth/600/400.jpg",
         "title": "Agency White-Label SEO",
         "category": "Agency · Strategy",
-        "metric": { "value": "20+", "label": "Client Accounts" },
-        "description": "Built and managed white-label SEO operations for a digital marketing agency, handling 20+ client accounts simultaneously."
+        "metric": {
+          "value": "25+",
+          "label": "Client Accounts"
+        },
+        "description": "Built and managed white-label SEO operations for a digital marketing agency, handling 25+ client accounts simultaneously."
+      },
+      {
+        "image": "https://fastly.picsum.photos/id/20/3670/2462.jpg?hmac=CmQ0ln-k5ZqkdtLvVO23LjVAEabZQx2wOaT4pyeG10I",
+        "title": "Multiregional Multilingual Estate Agency",
+        "category": "Estate Agency: SEO Strategy",
+        "metric": {
+          "value": "15+",
+          "label": "Countries Managed"
+        },
+        "description": "Planned and executed a full multiregional and multilingual SEO strategy across 15+ country-specific domains, covering hreflang implementation, CCTLD architecture, localised content strategy and technical SEO. Also managed GA4 setup, event tracking and performance reporting via Looker Studio to ensure maximum visibility and measurable results across all target markets."
+      },
+      {
+        "image": "https://fastly.picsum.photos/id/483/200/300.jpg?blur=5&hmac=OLFewXCWQshRjrqFwbXh5pd-TXoNsY0lxPi4HO5hv7g",
+        "title": "Marketing Performance Reporting",
+        "category": "SEO & Analytics: Reporting",
+        "metric": {
+          "value": "50+",
+          "label": "Reports Delivered"
+        },
+        "description": "Designed and delivered comprehensive marketing performance reports using Looker Studio, transforming raw data into actionable insights to analyse campaign effectiveness, track KPIs and support data-driven decision making across all key channels."
       }
     ]
   },
@@ -107,24 +156,60 @@
     "title": "SEO Manager",
     "description": "Experienced SEO Manager specializing in technical SEO, content strategy, and data-driven organic growth for businesses across multiple industries.",
     "facts": [
-      { "label": "Experience", "value": "5+ Years in SEO" },
-      { "label": "Specialization", "value": "Technical & Content SEO" },
-      { "label": "Industries", "value": "E-commerce, SaaS, Healthcare" },
-      { "label": "Based in", "value": "India" }
+      {
+        "label": "Experience",
+        "value": "9+ Years in SEO"
+      },
+      {
+        "label": "Specialisation",
+        "value": "SEO Strategy"
+      },
+      {
+        "label": "Industries",
+        "value": "Estate Agency, B2B Property Industry"
+      },
+      {
+        "label": "Based in",
+        "value": "India"
+      }
     ],
-    "specializations": ["Technical SEO", "Content Strategy", "Link Building", "Local SEO", "E-commerce SEO", "SaaS SEO"],
-    "tools": ["Google Analytics", "Ahrefs", "SEMrush", "Screaming Frog", "Google Search Console", "Surfer SEO"],
-    "certifications": ["Google Analytics Certified", "HubSpot SEO Certified", "SEMrush SEO Toolkit Certified"]
+    "specializations": [
+      "Technical SEO",
+      "Content Strategy",
+      "Link Building",
+      "Local SEO",
+      "SEO Plan of Action",
+      "Strategy Planning"
+    ],
+    "tools": [
+      "Google Analytics",
+      "Ahrefs",
+      "SEMrush",
+      "Screaming Frog",
+      "Google Search Console",
+      "Surfer SEO"
+    ],
+    "certifications": [
+      "Google Analytics Certified",
+      "HubSpot SEO Certified",
+      "SEMrush SEO Toolkit Certified"
+    ]
   },
   "contact": {
     "label": "Let's Connect",
     "heading": "Get in Touch",
     "description": "Have a project in mind or want to discuss how SEO can grow your business? I'd love to hear from you.",
-    "email": "premalatha.seo@gmail.com",
+    "email": "premalbe@gmail.com",
     "linkedin": "https://www.linkedin.com/in/premalatha-p-b4000411b/",
     "location": "India",
     "availability": "Open to opportunities",
-    "formSubjects": ["SEO Audit Request", "Content Strategy", "Technical SEO", "Local SEO", "General Inquiry"]
+    "formSubjects": [
+      "SEO Audit Request",
+      "Content Strategy",
+      "Technical SEO",
+      "Local SEO",
+      "General Inquiry"
+    ]
   },
   "footer": {
     "copyright": "© 2025 Premalatha P. All rights reserved.",
