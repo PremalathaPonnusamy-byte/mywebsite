@@ -71,7 +71,7 @@
     "label": "Case Studies",
     "heading": "Proven Results",
     "featured": {
-      "image": "https://picsum.photos/seed/ecommerce-fashion/800/600.jpg",
+      "image": "https://images.pexels.com/photos/5841845/pexels-photo-5841845.jpeg",
       "title": "Multi Regional and Multi Lingual Estate Agency Website",
       "category": "Organic SEO: On-page and Off-page SEO",
       "metrics": [
@@ -97,7 +97,7 @@
     },
     "items": [
       {
-        "image": "https://picsum.photos/seed/saas-dashboard/600/400.jpg",
+        "image": "https://images.pexels.com/photos/5862374/pexels-photo-5862374.jpeg",
         "title": "B2C Lead Generation",
         "category": "Estate Agency. CRO",
         "metric": {
@@ -107,7 +107,7 @@
         "description": "Developed a brand-specific conversion rate strategy that directly contributed to improving the overall conversion rate and driving more measurable results for the business."
       },
       {
-        "image": "https://picsum.photos/seed/healthcare-clinic/600/400.jpg",
+        "image": "https://images.pexels.com/photos/139387/pexels-photo-139387.jpeg",
         "title": "Multibrand Estate Agency",
         "category": "Estate Agency · Local SEO",
         "metric": {
@@ -117,7 +117,7 @@
         "description": "Took a multi-location estate agency from zero local search visibility to dominating the Google Local Pack across all branch locations, significantly increasing local reach and lead generation."
       },
       {
-        "image": "https://picsum.photos/seed/agency-growth/600/400.jpg",
+        "image": "https://images.pexels.com/photos/3184311/pexels-photo-3184311.jpeg",
         "title": "Agency White-Label SEO",
         "category": "Agency · Strategy",
         "metric": {
@@ -127,7 +127,7 @@
         "description": "Built and managed white-label SEO operations for a digital marketing agency, handling 25+ client accounts simultaneously."
       },
       {
-        "image": "https://fastly.picsum.photos/id/20/3670/2462.jpg?hmac=CmQ0ln-k5ZqkdtLvVO23LjVAEabZQx2wOaT4pyeG10I",
+        "image": "https://images.pexels.com/photos/3183174/pexels-photo-3183174.jpeg",
         "title": "Multiregional Multilingual Estate Agency",
         "category": "Estate Agency: SEO Strategy",
         "metric": {
@@ -137,7 +137,7 @@
         "description": "Planned and executed a full multiregional and multilingual SEO strategy across 15+ country-specific domains, covering hreflang implementation, CCTLD architecture, localised content strategy and technical SEO. Also managed GA4 setup, event tracking and performance reporting via Looker Studio to ensure maximum visibility and measurable results across all target markets."
       },
       {
-        "image": "https://fastly.picsum.photos/id/483/200/300.jpg?blur=5&hmac=OLFewXCWQshRjrqFwbXh5pd-TXoNsY0lxPi4HO5hv7g",
+        "image": "https://images.pexels.com/photos/97080/pexels-photo-97080.jpeg",
         "title": "Marketing Performance Reporting",
         "category": "SEO & Analytics: Reporting",
         "metric": {
@@ -151,7 +151,7 @@
   "knowledge": {
     "label": "Knowledge Panel",
     "heading": "At a Glance",
-    "photo": "https://picsum.photos/seed/professional-woman-portrait/300/300.jpg",
+    "photo": "https://github.com/PremalathaPonnusamy-byte/mywebsite/blob/main/images/Media%20(1).jpg",
     "name": "Premalatha P",
     "title": "SEO Manager",
     "description": "Experienced SEO Manager specializing in technical SEO, content strategy, and data-driven organic growth for businesses across multiple industries.",
@@ -175,11 +175,14 @@
     ],
     "specializations": [
       "Technical SEO",
+      "On-Page SEO",
       "Content Strategy",
       "Link Building",
       "Local SEO",
       "SEO Plan of Action",
-      "Strategy Planning"
+      "Strategy Planning",
+      "International SEO",
+      "AEO and GEO"
     ],
     "tools": [
       "Google Analytics",
@@ -187,7 +190,8 @@
       "SEMrush",
       "Screaming Frog",
       "Google Search Console",
-      "Surfer SEO"
+      "Surfer SEO",
+      "Data Studio"
     ],
     "certifications": [
       "Google Analytics Certified",
